@@ -1,5 +1,6 @@
 if ('TextEncoder' in window) {
-   window.FileWriter = {
+   window.FileWriter = function() {}
+   window.FileWriter.prototype = {
       write: function(data, filename, type) {
          if (data.buffer && data.buffer.toString() == '[object ArrayBuffer]') {
             data = type ? new Blob([data], {type: type}) : new Blob([data])
@@ -36,4 +37,6 @@ if ('TextEncoder' in window) {
          this.write(encoder.encode(text), filename, 'text/plain')
       }
    }
+   FileWriter.write = FileWriter.prototype.write
+   FileWriter.writeText = FileWriter.prototype.writeText
 }

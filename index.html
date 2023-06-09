@@ -37,7 +37,8 @@ input, select, button {
       button.onclick = function() {
          var text = document.getElementById('text').value
          var charset = document.getElementById('charset').value
-         FileWriter.writeText(text, 'file.txt', charset)
+         var fw = new FileWriter()
+         fw.writeText(text, 'file.txt', charset)
       }
    })
 
