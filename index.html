@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FileWriter test</title>
+<script src="text-encoder.js"></script>
+<script type="text/javascript" src="filewriter.js"></script>
+<style type="text/css">
+body {
+   font-family: Tahoma;
+}
+#form {
+   box-sizing: border-box;
+   font-family: Tahoma;
+   font-size: 0.8em;
+   width: 418px;
+   height: 120px;
+   padding: 30px;
+   border: 1px solid #aaa;
+   border-radius: 3px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-top: -84px;
+   margin-left: -208px;
+   white-space: nowrap;
+}
+input, select, button {
+   box-sizing: border-box;
+   height: 20px;
+}
+</style>
+<script type="text/javascript">
+   
+   window.addEventListener('DOMContentLoaded', function() {
+      var button = document.getElementById('button')
+      button.onclick = function() {
+         var text = document.getElementById('text').value
+         var charset = document.getElementById('charset').value
+         FileWriter.writeText(text, 'file.txt', charset)
+      }
+   })
+
+</script>
+</head>
+<body>
+    <div id="form">
+        <input type="text" id="text" placeholder="Enter text here" /> <select id="charset"><option value="cp866">CP866</option><option value="iso-8859-1">ISO-8859-1</option><option value="windows-1251">windows-1251</option><option value="windows-1252">windows-1252</option><option value="utf-8" selected>UTF-8</option></select> <button id="button">Save</button>
+    </div>
+</body>
+</html>
