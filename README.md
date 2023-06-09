@@ -1,5 +1,7 @@
 ### FileWriter API implementation
 
+Text charset conversion is based on https://github.com/inexorabletash/text-encoding/
+
 ## Usage
 
 `let fw = new FileWriter()`
