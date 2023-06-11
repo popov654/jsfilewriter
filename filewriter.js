@@ -33,6 +33,7 @@ if ('TextEncoder' in window) {
          if (!charset || typeof charset != 'string') {
             charset = 'utf-8'
          }
+         if (!filename) filename = 'file.txt'
          var encoder = new TextEncoder(charset, { fatal: false });
          this.write(encoder.encode(text), filename, 'text/plain')
       }
